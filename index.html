@@ -29,14 +29,19 @@
         </section>
             <section class="box">
                 <div class="password">
+                    <div class="security-indicator">
+                        <div id="security-indicator-bar" class="bar" style="width: 90%;">
+                        </div>
+                    </div>
+
                     <div class="text"> 
                         <input type="text" name="password" id="password">
                     </div>
+
                     <div class="actions">
 
                         <button id = "copy-1">
                             <img src="copy.svg" width="42">
-                            
                             </button>
 
                         <button id = "renew">
@@ -88,7 +93,6 @@
         })
 
         document.querySelector("#copy-1").addEventListener("click", copy)
-
         document.querySelector("#copy-2").addEventListener("click", copy)
 
         generatePassword()
