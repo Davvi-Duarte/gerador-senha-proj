@@ -72,3 +72,29 @@ main{
     border-bottom-right-radius: 8px ;
 }   
 
+.security-indicator .bar{
+    height: 10px;
+    background-color: #ddd;
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+
+    transition: all 0.2s
+}
+
+
+.security-indicator .bar.completed{
+    border-top-right-radius: 0 ;
+}
+
+
+.security-indicator .bar.critical{
+    background-color: red ;
+}
+
+.security-indicator .bar.warning{
+    background-color: yellow ;
+}
+
+.security-indicator .bar.safe{
+    background-color: green ;
+}
