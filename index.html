@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="security-indicator">
-          <div id="security-indicator-bar" class="bar" style="width: 90%"></div>
+          <div id="security-indicator-bar" class="bar safe"></div>
         </div>
       </section>
 
@@ -91,6 +91,7 @@
 
       const symbolcheckEl = document.querySelector("#symbol-check")
 
+      const securityIndicatorBarEl = document.querySelector("#security-indicator-bar")
 
       let passwordLength = 16
 
@@ -122,9 +123,15 @@
         }
 
         inputEl.value = password
+        calculateQuality()
+        
       }
 
-    
+      function calculateQuality(){
+        const percent = Math.round((passwordLength/64) * 100) 
+        securityIndicatorBarEl.style.width =  `${percent}%` 
+        console.log(percent)
+      }
 
       function copy() {
         navigator.clipboard.writeText(inputEl.value)
@@ -134,6 +141,7 @@
       passwordLengthEl.addEventListener("input", function() {
         passwordLength = passwordLengthEl.value
         document.querySelector("#password-length-text").innerText = passwordLength
+        
         generatePassword()
       })
 
