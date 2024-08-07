@@ -95,6 +95,7 @@
 
       let passwordLength = 16
 
+
       function generatePassword() {
         let chars = "abcdefghjkmnpqrstuvwxyz"
         
@@ -149,6 +150,13 @@
           securityIndicatorBarEl.classList.add('critical')
           securityIndicatorBarEl.classList.remove('warning')
           securityIndicatorBarEl.classList.remove('safe')
+
+        }
+
+        if (percent >= 100){
+          securityIndicatorBarEl.classList.add("completed")
+        }else{
+          securityIndicatorBarEl.classList.remove("completed")
 
         }
 
