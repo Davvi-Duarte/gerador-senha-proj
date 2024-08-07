@@ -128,8 +128,14 @@
       }
 
       function calculateQuality(){
-        const percent = Math.round((passwordLength/64) * 100) 
-        securityIndicatorBarEl.style.width =  `${percent}%` 
+        const percent = Math.round((passwordLength/64) * 25 
+        + (uppercasecheckEl.checked ? 15 : 0) 
+        + (numbercheckEl.checked ? 25 : 0)
+        + (symbolcheckEl.checked ? 35 : 0)
+        ) 
+
+        securityIndicatorBarEl.style.width =  `${percent}%`
+
         console.log(percent)
       }
 
